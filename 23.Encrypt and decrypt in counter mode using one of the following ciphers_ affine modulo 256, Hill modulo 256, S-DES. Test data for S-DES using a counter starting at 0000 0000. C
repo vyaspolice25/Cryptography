@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    unsigned char plaintext[24] = {0,0,0,0,0,0,0,1, 0,0,0,0,0,0,1,0, 0,0,0,0,0,1,0,0};
+    unsigned char key[10] = {0,1,1,1,1,1,1,1,0,1}; 
+
+    unsigned char IV[8] = {0,0,0,0,0,0,0,0};
+
+    unsigned char ciphertext[24];
+    generate_key_stream(IV, key, ciphertext, 3);
+    printf("Ciphertext: ");
+    for (int i = 0; i < 24; ++i) {
+        printf("%d", ciphertext[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+OUTPUT :
+
+Ciphertext: 001110000100111100110010
