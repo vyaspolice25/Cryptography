@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+long long factorial(int n) {
+    long long fact = 1;
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    return fact;
+}
+
+int main() {
+    int matrix_size = 25;
+    int positions = 5;  
+    long long keys = factorial(matrix_size) / factorial(positions);
+
+    printf("Number of possible keys (ignoring duplicates): %lld\n", keys);
+
+    return 0;
+}
+
+OUTPUT :
+
+Number of possible keys (ignoring duplicates): 15511210043330985984000000
